@@ -10,7 +10,7 @@ import {
   Keyboard,
 } from 'react-native';
 
-function AddToDo() {
+function AddToDo({onInsert}: any) {
   // state
   const [text, setText] = useState<string>('');
 
@@ -23,6 +23,7 @@ function AddToDo() {
 
   // event
   const onPress = () => {
+    onInsert(text);
     setText('');
     Keyboard.dismiss();
   };
